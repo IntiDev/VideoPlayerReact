@@ -20,14 +20,16 @@ const App = () => {
             {initialState.mylist && initialState.mylist.length > 0 &&
                 <Categories title='Mi lista'>
                     <Carousel>
-                        <CarouselItem/>
+                    {initialState.mylist && initialState.mylist.map(item =>
+                        <CarouselItem key={item.id} {...item} />
+                    )}
                     </Carousel>
                 </Categories>
             }
 
             <Categories title='Favoritos'>
                 <Carousel>
-                {initialState.originals && initialState.originals.map(item =>
+                    {initialState.originals && initialState.originals.map(item =>
                         <CarouselItem key={item.id} {...item} />
                     )}
                 </Carousel>
