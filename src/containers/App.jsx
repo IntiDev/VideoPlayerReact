@@ -21,23 +21,30 @@ const App = () => {
             <Header />
             <Search />
 
-            <Categories title='Mi lista'>
+            {videos.mylist && videos.mylist.length > 0 &&
+                <Categories title='Mi lista'>
+                    <Carousel>
+                        <CarouselItem/>
+                    </Carousel>
+                </Categories>
+            }
+
+            <Categories title='Favoritos'>
                 <Carousel>
-                    <CarouselItem/>
+                {videos.originals && videos.originals.map(item =>
+                        <CarouselItem key={item.id} {...item} />
+                    )}
                 </Carousel>
             </Categories>
 
             <Categories title='Tendencias'>
                 <Carousel>
-                    <CarouselItem/>
+                    {videos.trends && videos.trends.map(item =>
+                        <CarouselItem key={item.id} {...item} />
+                    )}
                 </Carousel>
             </Categories>
 
-            <Categories title='Favoritos'>
-                <Carousel>
-                    <CarouselItem/>
-                </Carousel>
-            </Categories>
             <Footer/>
         </div>
     )
