@@ -1,4 +1,12 @@
 
+@media only screen and (min-width: 1000px) {
+    .carousel__container {
+        display: flex;
+        justify-content: space-between;
+        margin: 70px 5%;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .main__description--title {
         font-size: 30px;
