@@ -6,6 +6,7 @@ const Footer = () => (
         <a href="/">Terminos de uso</a>
         <a href="/">Declaración de privacidad</a>
         <a href="/">Centro de ayuda</a>
+        <a href="/" className="footer-author"> Con ♡ por <strong>IntiDev</strong> </a>
     </footer>
 );
 
