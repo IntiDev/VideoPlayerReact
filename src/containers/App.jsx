@@ -8,8 +8,8 @@ import Footer from '../components/Footer';
 import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
-const API = 'http://localhost:3000/initialState';
-
+// const API = 'http://localhost:3000/initialState';
+const API = 'https://raw.githubusercontent.com/IntiDev/VideoPlayerReact/master/initialState.json';
 const App = () => {
     const initialState = useInitialState(API);
     return (

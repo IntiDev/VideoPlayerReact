@@ -1,17 +1,21 @@
 {
   "name": "VideoPlayer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reproductor de video del curso práctico de ReactJS de PLATZI",
+  "homepage": "https://intidev.github.io/VideoPlayerReact/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "IntiDev",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
