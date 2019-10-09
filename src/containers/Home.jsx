@@ -10,7 +10,7 @@ import '../assets/styles/App.scss';
 
 // const API = 'http://localhost:3000/initialState';
 const API = 'https://raw.githubusercontent.com/IntiDev/VideoPlayerReact/master/initialState.json';
-const App = () => {
+const Home = () => {
     const initialState = useInitialState(API);
     return (
         <div className='App'>
@@ -48,4 +48,4 @@ const App = () => {
     )
 };
 
-export default App;
+export default Home;
