@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import { connect } from 'react-redux';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
@@ -7,17 +8,16 @@ import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
 // const API = 'http://localhost:3000/initialState';
-const API = 'https://raw.githubusercontent.com/IntiDev/VideoPlayerReact/master/initialState.json';
-const Home = () => {
-    const initialState = useInitialState(API);
+// const API = 'https://raw.githubusercontent.com/IntiDev/VideoPlayerReact/master/initialState.json';
+const Home = ({ myList, trends, originals }) => {
     return (
         <Fragment>
             <Search />
 
-            {initialState.mylist && initialState.mylist.length > 0 &&
+            {myList && myList.length > 0 &&
                 <Categories title='Mi lista'>
                     <Carousel>
-                    {initialState.mylist && initialState.mylist.map(item =>
+                    {myList && myList.map(item =>
                         <CarouselItem key={item.id} {...item} />
                     )}
                     </Carousel>
@@ -26,7 +26,7 @@ const Home = () => {
 
             <Categories title='Favoritos'>
                 <Carousel>
-                    {initialState.originals && initialState.originals.map(item =>
+                    {originals && originals.map(item =>
                         <CarouselItem key={item.id} {...item} />
                     )}
                 </Carousel>
@@ -34,7 +34,7 @@ const Home = () => {
 
             <Categories title='Tendencias'>
                 <Carousel>
-                    {initialState.trends && initialState.trends.map(item =>
+                    {trends && trends.map(item =>
                         <CarouselItem key={item.id} {...item} />
                     )}
                 </Carousel>
@@ -43,4 +43,11 @@ const Home = () => {
     )
 };
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        myList: state.myList,
+        trends: state.trends,
+        originals: state.originals,
+    };
+};
+export default connect(mapStateToProps, null)(Home);// export default connect(props, actions)(Home);
