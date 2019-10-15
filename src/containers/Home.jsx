@@ -1,10 +1,8 @@
-import React from 'react';
-import Header from '../components/Header';
+import React, {Fragment} from 'react';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
-import Footer from '../components/Footer';
 import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
@@ -13,8 +11,7 @@ const API = 'https://raw.githubusercontent.com/IntiDev/VideoPlayerReact/master/i
 const Home = () => {
     const initialState = useInitialState(API);
     return (
-        <div className='App'>
-            <Header />
+        <Fragment>
             <Search />
 
             {initialState.mylist && initialState.mylist.length > 0 &&
@@ -42,9 +39,7 @@ const Home = () => {
                     )}
                 </Carousel>
             </Categories>
-
-            <Footer/>
-        </div>
+        </Fragment>
     )
 };
 
