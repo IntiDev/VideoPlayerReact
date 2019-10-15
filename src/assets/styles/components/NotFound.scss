@@ -1,0 +1,30 @@
+.not-found {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 72vh;
+}
+
+.not-found__title--animated {
+text-transform: uppercase;
+animation-fill-mode: both;
+animation-iteration-count: infinite;
+font-size: 100px;
+margin: 0;
+}
+
+@keyframes pulse {
+0% {transform: scale(1);}
+50% {transform: scale(1.1);}
+100% {transform: scale(1);}
+}
+.pulse {
+animation-name: pulse;
+animation-duration: 1s;
+}
+
+.not-found__text {
+font-size: 23px;
+}
