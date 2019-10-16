@@ -19,7 +19,7 @@ const initialState = {
         "year": 2009,
         "contentRating": "16+",
         "duration": 164,
-        "cover": "http://lorempixel.com/output/sports-q-c-800-600-6.jpg",
+        "cover": "https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "description": "Vestibulum ac est lacinia nisi venenatis tristique",
         "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
     },
