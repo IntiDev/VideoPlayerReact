@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar';
+import PropTypes from 'prop-types';
 import { logoutRequest} from '../actions';
 import '../assets/styles/components/Header.scss';
 import logo from '../assets/static/logo-platzi-video-BW2.png';
@@ -51,6 +52,12 @@ const Header = props => {
         </header>
     );
 }
+
+Header.PropTypes = {
+    user: PropTypes.object.isRequired,
+    logoutRequest: PropTypes.any.isRequired,
+}
+
 const mapStateToProps = state => {
     return {
         user: state.user,
