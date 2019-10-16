@@ -31,21 +31,20 @@ const Header = props => {
             </div>
             <ul>
                 { hasUser ?
-                    <li><a href='/'>{ user.name}</a></li> :
-                    null
-                }
-
-                { hasUser ?
-                    <li>
-                        <a href='#logout' onClick={ handleLogout }> Cerrar Sesión </a>
-                    </li>
-                    :
-                    <li>
-                        <Link to='/login'>
-                            Iniciar Sesión
-                        </Link>
-                    </li>
-
+                    (
+                    <>
+                        <li><a href='/'>{ user.name}</a></li>
+                        <li>
+                            <a href='#logout' onClick={ handleLogout }> Cerrar Sesión </a>
+                        </li>
+                    </>
+                    ) : (
+                        <li>
+                            <Link to='/login'>
+                                Iniciar Sesión
+                            </Link>
+                        </li>
+                    )
                 }
             </ul>
             </div>
@@ -53,7 +52,7 @@ const Header = props => {
     );
 }
 
-Header.PropTypes = {
+Header.propTypes = {
     user: PropTypes.object.isRequired,
     logoutRequest: PropTypes.any.isRequired,
 }
