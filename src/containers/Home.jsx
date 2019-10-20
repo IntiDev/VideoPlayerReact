@@ -9,7 +9,7 @@ import '../assets/styles/App.scss';
 const Home = ({ myList, trends, originals }) => {
     return (
         <Fragment>
-            <Search />
+            <Search isHome/>
 
             {myList && myList.length > 0 &&
                 <Categories title='Mi lista'>
