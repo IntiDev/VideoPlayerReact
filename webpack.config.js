@@ -3,7 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/frontend/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -56,12 +56,12 @@ module.exports = {
         historyApiFallback: true,
     },
     plugins: [
-        new HtmlWebPackPlugin({
-            template: './public/index.html',
-            filename: './index.html'
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'assets/[name].css'
-        }),
+        // new HtmlWebPackPlugin({
+        //     template: './public/index.html',
+        //     filename: './index.html'
+        // }),
+        // new MiniCssExtractPlugin({
+        //     // filename: 'assets/[name].css'
+        // }),
     ]
 };
