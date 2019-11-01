@@ -9,11 +9,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  optimizations: {
+  optimization: {
     splitChunks: {
       chunks: 'async',
       name: true,
@@ -27,7 +28,7 @@ module.exports = {
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
-            return chunks.some((chunk) => chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name));
+            return chunks.some((chunks) => chunks.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name));
           },
         },
       },
