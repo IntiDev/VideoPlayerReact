@@ -30,6 +30,7 @@
     "eslint-plugin-react": "^7.16.0",
     "express": "^4.17.1",
     "gh-pages": "^2.1.1",
+    "history": "^4.10.1",
     "md5": "^2.2.1",
     "nodemon": "^1.19.4",
     "postcss-loader": "^3.0.0",
